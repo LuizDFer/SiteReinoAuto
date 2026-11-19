@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Reino Automotivo — Estética e Detalhamento{% endblock %}
+
+{% block content %}
+
+<section id="inicio" class="hero">
+  <video class="hero-video hero-video--mobile" autoplay muted loop playsinline poster="{% static 'img/hero-desktop.png' %}" aria-hidden="true">
+    <source src="{% static 'video/hero.mp4' %}" type="video/mp4" media="(max-width: 768px)">
+  </video>
+  <img class="hero-video hero-video--desktop" src="{% static 'img/hero-desktop.png' %}" alt="" fetchpriority="high">
+
+  <div class="hero-inner">
+    <h1 class="reveal">Reino <span class="gold">Automotivo</span>.</h1>
+    <p class="lead reveal" style="--reveal-delay: 150ms;">Estética e detalhamento automotivo.</p>
+    <button type="button" class="btn btn-whatsapp btn-lg reveal" id="openWhatsModalHero" style="--reveal-delay: 300ms;">
+      Fale com nossos especialistas
+    </button>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container stats-inner">
+    <div class="stat reveal">
+      <h3>Atendimento personalizado</h3>
+      <p>Cada veículo tratado como único.</p>
+    </div>
+    <div class="stat reveal" style="--reveal-delay: 100ms;">
+      <h3>Produtos premium</h3>
+      <p>Tecnologia de ponta em cada etapa.</p>
+    </div>
+    <div class="stat reveal" style="--reveal-delay: 200ms;">
+      <h3>Garantia de qualidade</h3>
+      <p>Resultado impecável, sem atalhos.</p>
+    </div>
+  </div>
+</section>
+
+<section id="servicos" class="section section-tight">
+  <div class="container">
+    <h2 class="section-title reveal">Nossos serviços</h2>
+
+    <div class="servicos-layout">
+      <ul class="servicos-list">
+        <li class="servico reveal">
+          <h3>Lavagem Técnica & Premium</h3>
+          <p>Limpeza minuciosa de chassi, motor e pintura.</p>
+        </li>
+        <li class="servico reveal" style="--reveal-delay: 100ms;">
+          <h3>Vitrificação de Pintura</h3>
+          <p>Proteção cerâmica de alta durabilidade e brilho intenso.</p>
+        </li>
+        <li class="servico reveal" style="--reveal-delay: 200ms;">
+          <h3>Polimento Técnico</h3>
+          <p>Remoção de riscos, microrriscos e restauração da cor.</p>
+        </li>
+        <li class="servico reveal" style="--reveal-delay: 300ms;">
+          <h3>Higienização Interna</h3>
+          <p>Limpeza profunda de estofados, couro e teto com oxigenação.</p>
+        </li>
+        <li class="servico reveal" style="--reveal-delay: 400ms;">
+          <h3>Proteção de Plásticos & Vidros</h3>
+          <p>Cristalização, repelência à água e revitalização.</p>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+
+<section id="galeria" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title reveal">Galeria</h2>
+
+    <div class="gallery-grid">
+      <div class="gallery-item-wrap reveal">
+        <video class="gallery-video" muted loop playsinline preload="metadata">
+          <source src="{% static 'video/galeria-01.mp4' %}" type="video/mp4">
+        </video>
+        <button type="button" class="gallery-play" aria-label="Reproduzir vídeo 1">▶ Ver</button>
+      </div>
+
+      <div class="gallery-item-wrap reveal" style="--reveal-delay: 120ms;">
+        <video class="gallery-video" muted loop playsinline preload="metadata">
+          <source src="{% static 'video/galeria-02.mp4' %}" type="video/mp4">
+        </video>
+        <button type="button" class="gallery-play" aria-label="Reproduzir vídeo 2">▶ Ver</button>
+      </div>
+
+      <div class="gallery-item-wrap reveal" style="--reveal-delay: 240ms;">
+        <video class="gallery-video" muted loop playsinline preload="metadata">
+          <source src="{% static 'video/galeria-03.mp4' %}" type="video/mp4">
+        </video>
+        <button type="button" class="gallery-play" aria-label="Reproduzir vídeo 3">▶ Ver</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre" class="section">
+  <div class="container">
+    <h2 class="section-title reveal">Quem somos</h2>
+
+    <div class="sobre-layout">
+      <div class="sobre-texto reveal" style="--reveal-delay: 150ms;">
+        <p>A Reino Automotivo nasceu da paixão por carros e do respeito pelo trabalho bem feito. Cada veículo que entra aqui é tratado como único — porque é.</p>
+        <p>Unimos técnica apurada a produtos premium para entregar um acabamento que resiste ao tempo. Do polimento à vitrificação, cada etapa é feita com paciência e atenção que poucos lugares ainda oferecem.</p>
+        <p>Trabalhamos com prazos honestos e comunicação direta. Sem enrolação, sem atalhos — só o cuidado que o seu carro merece.</p>
+        <p>Se você procura um lugar que trate seu veículo como se fosse nosso, você está no lugar certo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="section section-alt">
+  <div class="container narrow center">
+    <h2 class="section-title reveal">Vamos cuidar do seu carro?</h2>
+    <p class="lead reveal" style="--reveal-delay: 100ms;">Chama no WhatsApp e agende uma visita.</p>
+    <button type="button" class="btn btn-whatsapp btn-lg reveal" id="openWhatsModalContato" style="--reveal-delay: 200ms;">
+      Fale com nossos especialistas
+    </button>
+    <p class="ig-line reveal" style="--reveal-delay: 300ms;">
+      Ou acompanhe no
+      <a href="https://instagram.com/reinoautomotivo2026" target="_blank" rel="noopener">
+        @reinoautomotivo2026
+      </a>
+    </p>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+/* ============================================
+   TEMA CLARO
+   ============================================ */
+html.theme-light {
+  --bg-dark: #f5f1e8;
+  --bg-elevated: #ede8dc;
+  --bg-card: #e6e0d1;
+  --gold: #8a6f2e;
+  --gold-light: #a8893c;
+  --silver: #3a3a40;
+  --text: #1a1815;
+  --text-muted: #5a554a;
+}
+
+html.theme-light body {
+  background: var(--bg-dark);
+  color: var(--text);
+}
+
+/* ---------- Seções ---------- */
+html.theme-light .section { background: var(--bg-dark); }
+html.theme-light .section-alt { background: var(--bg-elevated); }
+
+/* ---------- Tipografia ---------- */
+html.theme-light .section-title,
+html.theme-light .servico h3,
+html.theme-light .sobre-item h3,
+html.theme-light .stat h3 {
+  color: var(--text);
+}
