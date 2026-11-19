@@ -1,0 +1,239 @@
+/* ============ Header ============ */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: transparent;
+  border: none;
+}
+
+.site-header.is-scrolled {
+  position: fixed;
+  background: rgba(10, 16, 32, .92);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  border-radius: 0 0 12px 12px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 2.5rem;
+  width: 100%;
+}
+
+/* ---------- Brand ---------- */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  line-height: 1;
+  flex-shrink: 0;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s ease, visibility .3s ease;
+}
+.site-header.is-scrolled .brand {
+  visibility: visible;
+  opacity: 1;
+}
+
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-family: "Cormorant Garamond", "Georgia", "Times New Roman", serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: .01em;
+  color: var(--text-muted);
+  transition: color .2s ease;
+  line-height: 1;
+  transform: translateY(1px);
+}
+.brand:hover .brand-name {
+  color: var(--gold);
+}
+
+/* ---------- Nav ---------- */
+.site-nav {
+  display: flex;
+  gap: 1.6rem;
+  font-size: 1rem;
+  color: #fff;
+  text-shadow: none;
+  margin-left: auto;          /* empurra nav + ações pra direita */
+}
+.site-nav a {
+  transition: color .2s ease;
+}
+.site-nav a:hover { color: var(--gold); }
+
+/* ---------- Ações (toggle + hamburger) ---------- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+/* ---------- Botão toggle (theme) ---------- */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: .4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color .2s ease, transform .2s ease;
+}
+.theme-toggle:hover {
+  color: var(--gold);
+  transform: scale(1.08);
+}
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
+html.theme-light .theme-toggle .icon-sun { display: block; }
+html.theme-light .theme-toggle .icon-moon { display: none; }
+
+/* ---------- Menu hambúrguer ---------- */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: .5rem;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--text);
+}
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+  transition: transform .3s ease, opacity .3s ease;
+}
+.menu-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============ Mobile ============ */
+@media (max-width: 899px) {
+  .menu-toggle { display: flex; }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-left: 0;
+    background: var(--bg-dark);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s ease;
+    border-bottom: none;
+  }
+  .site-nav.is-open {
+    max-height: 400px;
+    padding: 1rem 0;
+  }
+  .site-nav a {
+    padding: .9rem 2rem;
+    font-size: 1rem;
+    letter-spacing: .05em;
+    color: var(--text) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
+  }
+  .site-nav a:last-of-type { border-bottom: none; }
+}
+
+/* ============ Light mode ============ */
+html.theme-light .site-header.is-scrolled {
+  background: #fdfcf8;
+  border-bottom: 1px solid rgba(138, 111, 46, .22);
+  border-radius: 0 0 12px 12px;
+}
+
+/* Header no topo (transparente sobre hero) */
+html.theme-light .site-header:not(.is-scrolled) .site-nav a,
+html.theme-light .site-header:not(.is-scrolled) .theme-toggle,
+html.theme-light .site-header:not(.is-scrolled) .menu-toggle {
+  color: #f5f5f5;
+}
+html.theme-light .site-header:not(.is-scrolled) .site-nav a:hover,
+html.theme-light .site-header:not(.is-scrolled) .theme-toggle:hover {
+  color: var(--gold-light);
+}
+
+/* Header rolado (fundo claro) */
+html.theme-light .site-header.is-scrolled .brand-name {
+  color: var(--text-muted);
+}
+html.theme-light .site-header.is-scrolled .brand:hover .brand-name {
+  color: var(--gold);
+}
+html.theme-light .site-header.is-scrolled .site-nav a,
+html.theme-light .site-header.is-scrolled .theme-toggle,
+html.theme-light .site-header.is-scrolled .menu-toggle {
+  color: var(--text-muted);
+  text-shadow: none;
+}
+html.theme-light .site-header.is-scrolled .site-nav a:hover,
+html.theme-light .site-header.is-scrolled .theme-toggle:hover {
+  color: var(--gold);
+}
+
+/* Mobile — menu aberto no light */
+@media (max-width: 899px) {
+  .header-inner {
+    justify-content: flex-end;    /* tudo à direita */
+  }
+
+  .brand {
+    margin-right: auto;            /* brand empurra o resto pra direita */
+  }
+
+  .site-nav {
+    margin-left: 0;                /* cancela margin-left: auto */
+  }
+
+  .header-actions {
+    margin-left: 0;                /* sem margin extra */
+  }
+  html.theme-light .site-nav {
+    background: #fdfcf8;
+    border-bottom: none;
+  }
+  html.theme-light .site-nav a,
+  html.theme-light .site-header:not(.is-scrolled) .site-nav a,
+  html.theme-light .site-header.is-scrolled .site-nav a {
+    color: var(--text) !important;
+    border-bottom-color: rgba(0, 0, 0, .06);
+  }
+  html.theme-light .site-nav a:hover {
+    color: var(--gold);
+  }
+}

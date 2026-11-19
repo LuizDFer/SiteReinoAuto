@@ -1,0 +1,52 @@
+/* ============ Contato ============ */
+#contato {
+  text-align: center;
+}
+#contato .section-title {
+  text-align: center;
+}
+#contato .lead,
+#contato .ig-line {
+  text-align: center;
+}
+
+.ig-line {
+  margin-top: 1.8rem;
+  color: var(--text-muted);
+  font-size: .9rem;
+  letter-spacing: .02em;
+}
+.ig-line a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-thickness .2s ease, color .2s ease;
+}
+.ig-line a:hover {
+  text-decoration-thickness: 2px;
+  color: #e6e6e6;
+}
+
+/* Link social (compat) */
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  color: var(--silver);
+  transition: color .2s ease;
+  font-size: .9rem;
+}
+.social-link:hover { color: var(--gold); }
+
+/* Light mode */
+html.theme-light .ig-line {
+  color: var(--text-muted);
+}
+html.theme-light .ig-line a {
+  color: var(--text);
+  text-decoration-color: var(--silver);
+}
+html.theme-light .ig-line a:hover {
+  text-decoration-color: var(--gold);
+}

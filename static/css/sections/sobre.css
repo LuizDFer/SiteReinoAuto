@@ -1,0 +1,101 @@
+/* ============ Quem somos ============ */
+.sobre-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+@media (min-width: 900px) {
+  .sobre-layout {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+}
+.sobre-texto { max-width: 800px; }
+
+.sobre-foto {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.foto-placeholder {
+  aspect-ratio: 4 / 5;
+  border-radius: 12px;
+  border: 1px solid rgba(201, 169, 97, .25);
+  background:
+    linear-gradient(135deg, rgba(201, 169, 97, .06), transparent 60%),
+    var(--bg-card);
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+  font-size: .8rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1rem;
+}
+
+.sobre-texto p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.sobre-texto p + p {
+  margin-top: 1.2rem;
+}
+
+/* Compat: sobre-list/sobre-item/sobre-text (versões antigas) */
+.sobre-list {
+  display: grid;
+  gap: 2rem;
+  max-width: 720px;
+}
+.sobre-item {
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--gold);
+}
+.sobre-item h3 {
+  color: var(--text);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: .4rem;
+  letter-spacing: .01em;
+}
+.sobre-item p {
+  color: var(--text-muted);
+  font-size: .95rem;
+  line-height: 1.6;
+}
+.sobre-text {
+  max-width: 640px;
+  color: var(--text-muted);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+.sobre-text p + p { margin-top: 1.2rem; }
+
+/* Light mode */
+html.theme-light .foto-placeholder {
+  border-color: rgba(138, 111, 46, .3);
+  background:
+    linear-gradient(135deg, rgba(138, 111, 46, .06), transparent 60%),
+    #ede8dc;
+}
+html.theme-light .sobre-item {
+  border-left-color: var(--gold);
+}
+html.theme-light .sobre-item h3 {
+  color: var(--text);
+}
+
+/* Quando a foto real chegar */
+.sobre-foto img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
