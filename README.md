@@ -2,6 +2,8 @@
 
 Site institucional para uma empresa de estética automotiva, criado para apresentar serviços, mostrar trabalhos em vídeo e facilitar o primeiro contato pelo WhatsApp.
 
+**[Acessar o site ao vivo](https://site-reino-auto.vercel.app/)** · [Ver o código no GitHub](https://github.com/LuizDFer/SiteReinoAuto)
+
 ![Prévia da identidade visual do projeto](static/img/hero-desktop.png)
 
 ## Sobre o projeto
