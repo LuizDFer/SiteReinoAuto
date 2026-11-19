@@ -36,4 +36,4 @@ Não publique `.env`, `db.sqlite3` nem dados de clientes. Os quatro vídeos usad
 
 ## Publicação no GitHub
 
-Depois da revisão de conteúdo, crie um repositório remoto (ou informe o existente), adicione-o como `origin` e envie a branch principal. Não inclua a chave de produção no repositório. A hospedagem do site Django exige um serviço de aplicação separado do GitHub.
+O código está no repositório privado [LuizDFer/SiteReinoAuto](https://github.com/LuizDFer/SiteReinoAuto), na branch `main`. Para publicar alterações futuras, revise o conteúdo, faça um commit e envie para `origin/main`. Não inclua a chave de produção no repositório. A hospedagem do site Django exige um serviço de aplicação separado do GitHub.
