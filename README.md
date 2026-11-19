@@ -2,9 +2,7 @@
 
 Site institucional para uma empresa de estética automotiva, criado para apresentar serviços, mostrar trabalhos em vídeo e facilitar o primeiro contato pelo WhatsApp.
 
-**[Acessar o site ao vivo](https://site-reino-auto.vercel.app/)** · [Ver o código no GitHub](https://github.com/LuizDFer/SiteReinoAuto)
-
-![Prévia da identidade visual do projeto](static/img/hero-desktop.png)
+**[Acessar o site ao vivo](https://site-reino-auto.vercel.app/)**
 
 ## Sobre o projeto
 
@@ -57,7 +55,3 @@ uv run ruff check .
 O código fica no GitHub e a aplicação é publicada pela Vercel. A chave Django é configurada como variável de ambiente da hospedagem. `.env`, banco local e arquivos gerados não entram no repositório. A página pública não depende do banco local; funcionalidades futuras que gravem dados exigirão um banco persistente.
 
 A imagem hero desktop é ilustrativa e foi gerada com base nas referências visuais disponíveis. Antes de usar o projeto como site comercial definitivo, confirme os dados de contato, o texto de serviços e os direitos de uso dos vídeos e da marca.
-
-## Autor
-
-Desenvolvido por [Luiz Ferreira](https://github.com/LuizDFer). Este projeto mostra implementação de interface responsiva, integração com Django, acessibilidade básica e preparação para publicação.
