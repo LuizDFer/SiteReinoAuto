@@ -1,39 +1,61 @@
 # Reino Automotivo
 
-Site institucional da Reino Automotivo, desenvolvido em Django. Apresenta serviços, vídeos e contatos por WhatsApp.
+Site institucional para uma empresa de estética automotiva, criado para apresentar serviços, mostrar trabalhos em vídeo e facilitar o primeiro contato pelo WhatsApp.
 
-## Rodar localmente
+![Prévia da identidade visual do projeto](static/img/hero-desktop.png)
 
-Requer Python 3.14 e [uv](https://docs.astral.sh/uv/).
+## Sobre o projeto
 
-1. `uv sync --group dev`
-2. Copie `.env.example` para `.env` e substitua `DJANGO_SECRET_KEY` por uma chave exclusiva. Gere uma com `uv run python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"`.
-3. `uv run python manage.py migrate`
-4. `uv run python manage.py runserver`
+A experiência foi construída com Django e uma interface própria em HTML, CSS e JavaScript. O foco é conduzir o visitante dos serviços e da galeria até uma conversa com a equipe, mantendo a identidade visual da marca em telas grandes e pequenas.
 
-O site estará em `http://127.0.0.1:8000/`.
+### Funcionalidades
 
-## Verificação
+- Página responsiva com temas claro e escuro.
+- Galeria de vídeos com reprodução controlada pelo visitante.
+- Contato por WhatsApp com escolha do especialista.
+- Navegação por teclado, link para pular ao conteúdo e suporte a movimento reduzido.
+- Metadados de SEO e compartilhamento social.
+- Testes para a página inicial e para os arquivos de mídia usados nela.
 
-- `uv run python manage.py check`
-- `uv run python manage.py test`
-- `uv run python manage.py collectstatic --noinput`
-- `uv run ruff check .`
+## Tecnologias
 
-## Ambiente de produção
+| Camada | Ferramentas |
+| --- | --- |
+| Aplicação | Python 3.14, Django 6, Django templates |
+| Interface | HTML, CSS, JavaScript sem framework |
+| Dependências e qualidade | uv, Ruff, testes do Django |
+| Hospedagem | Vercel para a aplicação e os arquivos estáticos |
 
-Configure `DJANGO_SECRET_KEY` como segredo do provedor, `DJANGO_DEBUG=False`, `DJANGO_ALLOWED_HOSTS` com os domínios reais e `DJANGO_CSRF_TRUSTED_ORIGINS` com as origens HTTPS. Ative `DJANGO_SECURE_SSL_REDIRECT=True` e `DJANGO_SECURE_HSTS_SECONDS` apenas quando o domínio servir HTTPS corretamente. Execute migrações e `collectstatic`, sirva os arquivos estáticos por um servidor ou serviço próprio e execute a aplicação via WSGI/ASGI. O GitHub armazena o código; GitHub Pages sozinho não executa Django.
+## Executar localmente
 
-Não publique `.env`, `db.sqlite3` nem dados de clientes. Os quatro vídeos usados na página e as imagens em `static/` fazem parte do código publicado. A imagem hero desktop é ilustrativa, gerada a partir das imagens locais existentes; não representa necessariamente a equipe ou as instalações reais.
+1. Instale Python 3.14 e [uv](https://docs.astral.sh/uv/).
+2. Execute `uv sync --group dev`.
+3. Copie `.env.example` para `.env` e gere uma chave exclusiva para `DJANGO_SECRET_KEY` com `uv run python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"`.
+4. Execute `uv run python manage.py migrate` e `uv run python manage.py runserver`.
+5. Abra `http://127.0.0.1:8000/`.
 
-## Conteúdo a confirmar antes de lançar
+Para verificar o projeto:
 
-- Confirmar nomes e números de WhatsApp de Nathan e Samuel.
-- Confirmar o perfil do Instagram e o link de crédito no rodapé.
-- Revisar textos de serviços e promessas comerciais.
-- Fornecer fotos reais da equipe e resultados de antes/depois caso deseje essas seções; os espaços provisórios foram retirados.
-- Confirmar direitos de uso dos vídeos e da marca. A imagem antiga `hero.jpg`, que mostrava marca d'água, foi retirada da cópia pronta para publicação.
+```bash
+uv run python manage.py check
+uv run python manage.py test
+uv run python manage.py collectstatic --noinput
+uv run ruff check .
+```
 
-## Publicação no GitHub
+## Organização
 
-O código está no repositório privado [LuizDFer/SiteReinoAuto](https://github.com/LuizDFer/SiteReinoAuto), na branch `main`. Para publicar alterações futuras, revise o conteúdo, faça um commit e envie para `origin/main`. Não inclua a chave de produção no repositório. A hospedagem do site Django exige um serviço de aplicação separado do GitHub.
+- `core/` reúne a página inicial e seus testes.
+- `templates/` contém o HTML renderizado pelo Django.
+- `static/` reúne estilos, scripts, marca, imagem hero e vídeos.
+- `config/` contém a configuração da aplicação.
+
+## Publicação e segurança
+
+O código fica no GitHub e a aplicação é publicada pela Vercel. A chave Django é configurada como variável de ambiente da hospedagem. `.env`, banco local e arquivos gerados não entram no repositório. A página pública não depende do banco local; funcionalidades futuras que gravem dados exigirão um banco persistente.
+
+A imagem hero desktop é ilustrativa e foi gerada com base nas referências visuais disponíveis. Antes de usar o projeto como site comercial definitivo, confirme os dados de contato, o texto de serviços e os direitos de uso dos vídeos e da marca.
+
+## Autor
+
+Desenvolvido por [Luiz Ferreira](https://github.com/LuizDFer). Este projeto mostra implementação de interface responsiva, integração com Django, acessibilidade básica e preparação para publicação.
