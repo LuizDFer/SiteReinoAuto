@@ -1,18 +1,14 @@
 # Reino Automotivo
 
-Site institucional para uma empresa de estética automotiva, criado para apresentar serviços, mostrar trabalhos em vídeo e facilitar o primeiro contato pelo WhatsApp.
+Fiz este site para apresentar os serviços do Reino Automotivo e mostrar em vídeo como fica o trabalho da equipe. Quem quiser pedir um orçamento pode escolher com qual especialista falar pelo WhatsApp.
 
-**[Acessar o site ao vivo](https://site-reino-auto.vercel.app/)**
+**[Abrir o site](https://site-reino-auto.vercel.app/)**
 
-## Sobre o projeto
+## O que fiz
 
-A experiência foi construída com Django e uma interface própria em HTML, CSS e JavaScript. O foco é conduzir o visitante dos serviços e da galeria até uma conversa com a equipe, mantendo a identidade visual da marca em telas grandes e pequenas.
-
-### Funcionalidades
+Usei Django para renderizar a página e escrevi a interface em HTML, CSS e JavaScript. Na galeria, deixei os vídeos sob controle do visitante, que escolhe o que quer assistir.
 
 - Página responsiva com temas claro e escuro.
-- Galeria de vídeos com reprodução controlada pelo visitante.
-- Contato por WhatsApp com escolha do especialista.
 - Navegação por teclado, link para pular ao conteúdo e suporte a movimento reduzido.
 - Metadados de SEO e compartilhamento social.
 - Testes para a página inicial e para os arquivos de mídia usados nela.
@@ -50,7 +46,7 @@ uv run ruff check .
 - `static/` reúne estilos, scripts, marca, imagem hero e vídeos.
 - `config/` contém a configuração da aplicação.
 
-## Publicação e segurança
+## Publicação
 
 O código fica no GitHub e a aplicação é publicada pela Vercel. A chave Django é configurada como variável de ambiente da hospedagem. `.env`, banco local e arquivos gerados não entram no repositório. A página pública não depende do banco local; funcionalidades futuras que gravem dados exigirão um banco persistente.
 
